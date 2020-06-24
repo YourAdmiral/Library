@@ -37,6 +37,27 @@ namespace Library.Controllers
             }
             return View(Book);
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Upsert(Book book)
+        {
+            if (ModelState.IsValid)
+            {
+                if (Book.Id==0)
+                {
+                    //Создание
+                    _db.Books.Add(Book);
+                }
+                else
+                {
+                    _db.Books.Update(Book);
+                }
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(Book);
+        }
+
         #region API запросы
         [HttpGet]
         public async Task<IActionResult> GetAll()
