@@ -371,3 +371,4 @@ C:\Users\YourM\OneDrive\Рабочий стол\Library\Library\Library\obj\Debu
 C:\Users\YourM\OneDrive\Рабочий стол\Library\Library\Library\obj\Debug\netcoreapp3.1\Library.dll
 C:\Users\YourM\OneDrive\Рабочий стол\Library\Library\Library\obj\Debug\netcoreapp3.1\Library.pdb
 C:\Users\YourM\OneDrive\Рабочий стол\Library\Library\Library\obj\Debug\netcoreapp3.1\Library.genruntimeconfig.cache
+C:\Users\YourM\OneDrive\Рабочий стол\Library\Library\Library\obj\Debug\netcoreapp3.1\Razor\Views\Books\Index.cshtml.g.cs
