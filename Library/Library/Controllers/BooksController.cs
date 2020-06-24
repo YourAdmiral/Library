@@ -11,7 +11,8 @@ namespace Library.Controllers
     public class BooksController : Controller
     {
         private readonly ApplicationDbContext _db;
-
+        [BindProperty]
+        public Book Book { get; set; }
         public BooksController(ApplicationDbContext db)
         {
             _db = db;
@@ -19,6 +20,22 @@ namespace Library.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+        public IActionResult Upsert(int? id)
+        {
+            Book = new Book();
+            if (id==null)
+            {
+                //Создать
+                return View(Book);
+            }
+            //Обновить
+            Book = _db.Books.FirstOrDefault(u => u.Id == id);
+            if (Book==null)
+            {
+                return NotFound();
+            }
+            return View(Book);
         }
         #region API запросы
         [HttpGet]
